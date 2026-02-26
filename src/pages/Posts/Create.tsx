@@ -43,12 +43,12 @@ export default function Create() {
 
             <form onSubmit={handleSubmit} className="w-1/2 mx-auto space-y-6">
                 <div>
-                    <input type="text" name="title" placeholder="Post Title" value={formData.title} onChange={handleChange} />
+                    <input type="text" name="title" placeholder="Post Title" value={formData.title} onChange={handleChange} required />
                     {errors.title && <p className="error">{errors.title[0]}</p>}
                 </div>
 
                 <div>
-                    <textarea rows={6} name="body" placeholder="Post Content" value={formData.body} onChange={handleChange} />
+                    <textarea rows={6} name="body" placeholder="Post Content" value={formData.body} onChange={handleChange} required />
                     {errors.body && <p className="error">{errors.body[0]}</p>}
                 </div>
 
