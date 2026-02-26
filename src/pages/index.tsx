@@ -3,6 +3,7 @@ import Home from "./Home";
 import Register from "./Auth/Register";
 import Login from "./Auth/Login";
 import Create from "./Posts/Create";
+import Show from "./Posts/Show";
 
 
-export { Layout, Home, Register, Login, Create };
+export { Layout, Home, Register, Login, Create, Show };
