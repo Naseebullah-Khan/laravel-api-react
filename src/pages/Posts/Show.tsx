@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
+import useAppContext from "../../Context/useAppContext";
 
 type User = {
     id: number;
@@ -19,13 +20,14 @@ type Post = {
     updated_at: string;
 };
 
-type PostWithUser = {
+export type PostWithUser = {
     post: Post,
     user: User,
 }
 
 export default function Show() {
     const { id } = useParams();
+    const { user } = useAppContext()
     const [post, setPost] = useState<PostWithUser>();
 
     useEffect(() => {
@@ -51,6 +53,11 @@ export default function Show() {
                         </div>
                     </div>
                     <p>{post.post.body}</p>
+                    {user?.id === post.post.user_id &&
+                        <div className="flex items-center justify-end gap-4">
+                            <Link to={`/posts/update/${post.post.id}`} className="bg-green-500 text-white text-sm rounded-lg px-3 py-1">Update</Link>
+                        </div>
+                    }
                 </div>
             ) : (
                 <p className="title">Post not found!</p>

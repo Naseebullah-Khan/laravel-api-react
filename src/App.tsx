@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import { Create, Home, Layout, Login, Register, Show } from './pages'
+import { Create, Home, Layout, Login, Register, Show, Update } from './pages'
 import AuthRoutes from './pages/AuthRoutes'
+import ProtectedRoutes from './pages/ProtectedRoutes'
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path='/create' element={<Create />} />
           <Route path='/posts/:id' element={<Show />} />
+          <Route path='/posts/update/:id' element={<ProtectedRoutes><Update /></ProtectedRoutes>} />
           <Route path='register' element={<AuthRoutes><Register /></AuthRoutes>} />
           <Route path='login' element={<AuthRoutes><Login /></AuthRoutes>} />
         </Route>
