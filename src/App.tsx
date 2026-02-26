@@ -10,7 +10,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='/create' element={<Create />} />
+          <Route path='/create' element={<ProtectedRoutes><Create /></ProtectedRoutes>} />
           <Route path='/posts/:id' element={<Show />} />
           <Route path='/posts/update/:id' element={<ProtectedRoutes><Update /></ProtectedRoutes>} />
           <Route path='register' element={<AuthRoutes><Register /></AuthRoutes>} />
