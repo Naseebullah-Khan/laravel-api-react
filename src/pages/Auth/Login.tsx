@@ -44,12 +44,12 @@ export default function Login() {
 
                 <div>
                     <input type="email" name="email" placeholder="Email" onChange={handleChange} value={formData.email} required />
-                    {errors.email && <p className="error">{errors.email}</p>}
+                    {errors.email && <p className="error">{errors.email[0]}</p>}
                 </div>
 
                 <div>
                     <input type="password" name="password" placeholder="Password" onChange={handleChange} value={formData.password} required />
-                    {errors.password && <p className="error">{errors.password}</p>}
+                    {errors.password && <p className="error">{errors.password[0]}</p>}
                 </div>
 
                 <button className="primary-btn">Login</button>

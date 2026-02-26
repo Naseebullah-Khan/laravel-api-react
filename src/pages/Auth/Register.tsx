@@ -45,17 +45,17 @@ export default function Register() {
             <form className="w-1/2 mx-auto space-y-6" onSubmit={onSubmit}>
                 <div>
                     <input type="text" name="name" placeholder="Name" onChange={handleChange} value={formData.name} required />
-                    {errors.name && <p className="error">{errors.name}</p>}
+                    {errors.name && <p className="error">{errors.name[0]}</p>}
                 </div>
 
                 <div>
                     <input type="email" name="email" placeholder="Email" onChange={handleChange} value={formData.email} required />
-                    {errors.email && <p className="error">{errors.email}</p>}
+                    {errors.email && <p className="error">{errors.email[0]}</p>}
                 </div>
 
                 <div>
                     <input type="password" name="password" placeholder="Password" onChange={handleChange} value={formData.password} required />
-                    {errors.password && <p className="error">{errors.password}</p>}
+                    {errors.password && <p className="error">{errors.password[0]}</p>}
                 </div>
 
                 <div>
