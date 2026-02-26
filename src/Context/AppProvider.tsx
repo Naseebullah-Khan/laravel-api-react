@@ -29,7 +29,7 @@ export default function AppProvider({ children }: AppProviderProps) {
     }, [token])
 
     return (
-        <AppContext.Provider value={{ token, setToken, user }}>
+        <AppContext.Provider value={{ token, setToken, user, setUser }}>
             {children}
         </AppContext.Provider>
     )
