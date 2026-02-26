@@ -20,7 +20,9 @@ export default function AppProvider({ children }: AppProviderProps) {
                 })
 
                 const data = await response.json();
-                setUser(data);
+                if (response.ok) {
+                    setUser(data);
+                }
             }
             getUser();
         }
