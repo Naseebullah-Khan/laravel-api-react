@@ -31,6 +31,7 @@ export default function Layout() {
                     {user && user.name ? (
                         <div className="space-x-4 flex items-center">
                             <p className="text-slate-400 text-xs">Welcome back {user.name}</p>
+                            <Link to="/create" className="nav-link">New Post</Link>
                             <form onSubmit={handleSubmit}>
                                 <button className="nav-link">Logout</button>
                             </form>
